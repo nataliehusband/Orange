@@ -13,7 +13,7 @@
   </target>
 
   <target name="jar" depends="init,compile">
-    <jar destfile="${dist}/${ant.project.name}.jar" basedir="dist/classes">
+    <jar destfile="${dist}/${ant.project.name}.jar" basedir="${dist}/classes">
       <manifest>
         <attribute name="Main-Class" value="${ant.project.name}"/>
       </manifest>
@@ -21,7 +21,7 @@
   </target>
 
   <target name="run" depends="jar">
-    <java jar="dist/${ant.project.name}.jar" fork="true"/>
+    <java jar="${dist}/${ant.project.name}.jar" fork="true"/>
   </target>
 
   <target name="clean">
